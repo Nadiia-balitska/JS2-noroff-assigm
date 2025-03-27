@@ -1,16 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
+    <title>BuzzNet - Create Post</title>
     <script type="module" src="/src/app.js"></script>
   </head>
-  <body>
-    <h1>Create Post</h1>
-
-    <form name="createPost">
-      <button>Create Post</button>
-    </form>
+  <body class="bg-orange-100 min-h-screen flex items-center justify-center">
+    <main class="bg-white rounded-lg shadow-lg p-8 max-w-lg w-full">
+      <h1 class="text-2xl font-bold text-orange-500 mb-6 text-center">Create a New Post</h1>
+      <form name="createPost" class="space-y-4" onsubmit="create(event)" id="register-form">
+        <input 
+          type="text" 
+          id="title" 
+          name="title" 
+          placeholder="Title" 
+          required 
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-400 transition" />
+          
+        <textarea 
+          id="content" 
+          name="content" 
+          placeholder="Content" 
+          required 
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-400 transition resize-vertical min-h-[100px]"></textarea>
+          
+        <input 
+          type="text" 
+          id="url" 
+          name="url" 
+          placeholder="URL" 
+          required 
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-400 transition" />
+          
+        <button 
+          type="submit" 
+          class="w-full p-3 bg-gradient-to-br from-orange-500 to-orange-400 text-white font-bold rounded-lg hover:from-orange-400 hover:to-orange-500 transition">
+          Publish
+        </button>
+      </form>
+    </main>
   </body>
 </html>

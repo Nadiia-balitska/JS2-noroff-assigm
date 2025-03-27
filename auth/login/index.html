@@ -1,28 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
-    <script type="module" src="/src/app.js"></script>
+    <title>BuzzNet - Login</title>
+    <script src="/src/app.js" type="module"></script>
   </head>
-
-  <body>
-    <h1>Login</h1>
-    <form name="login">
-      <div>
-        <label for="email">Email</label>
-        <input id="email" type="email" name="email" required />
+  <body class="bg-gradient-to-br from-orange-500 to-orange-300 h-screen flex items-center justify-center">
+    <!-- Search Bar in Navbar (optional) -->
+    <nav class="fixed top-0 w-full flex justify-center p-4">
+      <div class="flex items-center space-x-2">
+        <input 
+          type="text" 
+          placeholder="Search BuzzNet..." 
+          class="p-2 rounded-l-md border border-orange-500 focus:outline-none focus:border-orange-400" />
+        <button class="bg-orange-500 text-white px-4 py-2 rounded-r-md hover:bg-orange-600">Search</button>
       </div>
-
-      <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required />
-      </div>
-
-      <a href="/auth/register/">Register</a>
-      <button>Login</button>
-    </form>
+    </nav>
+    
+    <!-- Login Form Container -->
+    <div class="bg-white bg-opacity-90 text-gray-800 p-10 rounded-lg shadow-lg max-w-md w-full">
+      <h2 class="text-center text-2xl font-bold text-orange-500 mb-6">Login to BuzzNet</h2>
+      <form name="login" class="space-y-4">
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          class="w-full p-3 border-2 border-orange-500 rounded-lg focus:outline-none focus:border-orange-400 transition" />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+          class="w-full p-3 border-2 border-orange-500 rounded-lg focus:outline-none focus:border-orange-400 transition" />
+        <button type="submit" class="w-full p-3 bg-gradient-to-br from-orange-500 to-orange-400 text-white font-bold rounded-lg hover:from-orange-400 hover:to-orange-500 transition">Login</button>
+      </form>
+      <p class="text-center mt-4">
+        Don’t have an account?
+        <a href="/auth/register/" class="text-orange-500 font-semibold hover:underline">Register here</a>
+      </p>
+    </div>
   </body>
 </html>

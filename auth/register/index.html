@@ -1,55 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
-    <script type="module" src="/src/app.js"></script>
+    <title>BuzzNet - Register</title>
+    <script src="/src/app.js" type="module"></script> 
   </head>
-
-  <body>
-    <h1>Register</h1>
-
-    <form name="register">
-      <div>
-        <label for="name">Name</label>
+  <body class="bg-gradient-to-br from-orange-500 to-orange-300 h-screen flex items-center justify-center">
+    <div class="bg-white bg-opacity-90 text-gray-800 p-10 rounded-lg shadow-lg max-w-md w-full">
+      <h2 class="text-center text-2xl font-bold text-orange-500 mb-6">Create a BuzzNet Account</h2>
+      <form id="registerForm" name="register" class="space-y-4">
         <input
-          id="name"
           type="text"
+          id="userName"
           name="name"
+          placeholder="Username"
           required
-          maxlength="20"
-          pattern="^[\w]+$"
-          title="Please enter a username using only letters and numbers"
-        />
-      </div>
-
-      <div>
-        <label for="email">Email</label>
+          class="w-full p-3 border-2 border-orange-500 rounded-lg focus:outline-none focus:border-orange-400 transition" />
         <input
-          id="email"
           type="email"
+          id="email"
           name="email"
+          placeholder="Email"
           required
-          pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
-          title="Please enter a valid noroff.no or stud.noroff.no address"
-        />
-      </div>
-
-      <div>
-        <label for="password">Password</label>
+          class="w-full p-3 border-2 border-orange-500 rounded-lg focus:outline-none focus:border-orange-400 transition" />
         <input
           type="password"
-          name="password"
           id="password"
+          name="password"
+          placeholder="Password"
           required
-          minlength="8"
-        />
-      </div>
-
-      <a href="/auth/login/">Login</a>
-      <button>Register</button>
-    </form>
+          class="w-full p-3 border-2 border-orange-500 rounded-lg focus:outline-none focus:border-orange-400 transition" />
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          placeholder="Confirm Password"
+          required
+          class="w-full p-3 border-2 border-orange-500 rounded-lg focus:outline-none focus:border-orange-400 transition" />
+        <button class="w-full p-3 bg-gradient-to-br from-orange-500 to-orange-400 text-white font-bold rounded-lg hover:from-orange-400 hover:to-orange-500 transition">Register</button>
+      </form>
+      <p class="text-center mt-4">Already have an account? 
+        <a href="/auth/login/" class="text-orange-500 font-semibold hover:underline">Login here</a>
+      </p>
+    </div>
   </body>
 </html>
