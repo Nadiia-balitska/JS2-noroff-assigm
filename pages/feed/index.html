@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feed</title>
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body class="bg-gray-100 text-gray-900 font-sans">
+    <header class="bg-white shadow p-4">
+      <div class="max-w-4xl mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Feed</h1>
+        <a href="/post/create/" class="text-blue-600 hover:underline">New Post</a>
+      </div>
+    </header>
+
+    <main class="max-w-2xl mx-auto mt-8 px-4">
+      <div id="feed" class="post-list space-y-4"></div>
+    </main>
+
+    <script type="module" src="/src/js/router/views/feed.js"></script>
+  </body>
+</html>

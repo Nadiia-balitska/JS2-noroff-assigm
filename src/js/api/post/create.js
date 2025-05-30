@@ -1,4 +1,4 @@
-export async function createPost(title, body = "") {
+export async function createPost({ title, body = "", media = "" }) {
   const token = localStorage.getItem("token");
 
   const response = await fetch("https://v2.api.noroff.dev/social/posts", {
@@ -7,7 +7,7 @@ export async function createPost(title, body = "") {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify({ title, body }),
+    body: JSON.stringify({ title, body, media }),
   });
 
   if (!response.ok) {
