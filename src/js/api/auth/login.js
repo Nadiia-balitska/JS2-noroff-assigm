@@ -23,7 +23,7 @@ export async function onLogin(event) {
     const result = await loginUser({ email, password });
 
     // Save login info to localStorage
-    localStorage.setItem("token", result.accessToken);
+    localStorage.setItem("authToken", result.accessToken);
     localStorage.setItem("username", result.name);
 
     if (messageBox) {
