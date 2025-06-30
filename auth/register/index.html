@@ -2,23 +2,60 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
   </head>
-  <body>
-    <h1>Register Page</h1>
-    <form id="register-form">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required />
-      <br />
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
-      <br />
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required />
-      <br />
-      <button type="submit">Register</button>
-    </form>
+  <body class="bg-gray-100 text-gray-900 font-sans">
+    <main class="max-w-md mx-auto mt-10 p-6 bg-white shadow-md rounded">
+      <h1 class="text-2xl font-bold mb-6">Register</h1>
+      <form id="register-form" class="space-y-4">
+        <div>
+          <label for="username" class="block mb-1">Username:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            required
+            class="w-full p-2 border rounded"
+          />
+        </div>
+        <div>
+          <label for="email" class="block mb-1">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full p-2 border rounded"
+          />
+        </div>
+        <div>
+          <label for="password" class="block mb-1">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            class="w-full p-2 border rounded"
+          />
+        </div>
+        <div id="message" class="text-sm"></div>
+        <button
+          type="submit"
+          class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700"
+        >
+          Register
+        </button>
+      </form>
+    </main>
 
-    <script type="module" src="/src/js/views/register.js"></script>
+    <script type="module">
+      import { onRegister } from "/src/js/api/auth/register.js";
+
+      const form = document.getElementById("register-form");
+      if (form) {
+        form.addEventListener("submit", onRegister);
+      }
+    </script>
   </body>
 </html>

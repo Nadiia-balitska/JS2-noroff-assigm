@@ -31,7 +31,7 @@ export async function onLogin(event) {
     }
 
     setTimeout(() => {
-      window.location.href = "feed.html"; //Go to feed after login
+      window.location.href = "/feed/"; //Go to feed after login
     }, 1500);
   } catch (error) {
     if (messageBox) {
