@@ -1,15 +1,17 @@
-export async function fetchPosts() {
-  const token = localStorage.getItem('token');
+export async function getPosts() {
+  const token = localStorage.getItem("token");
 
-  const res = await fetch("https://v2.api.noroff.dev/social/posts?_author=true&_comments=true&_reactions=true", {
+  const response = await fetch("https://v2.api.noroff.dev/social/posts?_author=true", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch posts');
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.errors?.[0]?.message || "Could not fetch posts.");
   }
 
-  return await res.json();
+  const result = await response.json();
+  return result.data;
 }
