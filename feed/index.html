@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feed</title>
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body class="bg-gray-100 text-gray-900 font-sans">
+    <header class="bg-white shadow p-4">
+      <div class="max-w-4xl mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Feed</h1>
+        <a href="/post/create/index.html" class="text-blue-600 hover:underline">New Post</a>
+      </div>
+    </header>
+
+    <main class="max-w-2xl mx-auto mt-8 px-4">
+      <div class="post-list"></div>
+    </main>
+
+    <script type="module">
+      const token = localStorage.getItem("authToken");
+      if (!token) {
+        alert("You must be logged in to view this page.");
+        window.location.href = "/auth/login/index.html";
+      } else {
+        import("/src/js/router/views/feed.js").then((module) => {
+          if (typeof module.loadFeed === "function") {
+            module.loadFeed(); // optional: if your module exports loadFeed()
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

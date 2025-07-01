@@ -1,5 +1,13 @@
+// Import global styles
 import "./css/style.css";
 
-import router from "./js/router";
+// Import the router function (named import)
+import { router } from "./js/router/index.js";
 
-await router(window.location.pathname);
+// Initialize router on first load
+router(window.location.pathname);
+
+// Re-run router on browser navigation
+window.addEventListener("popstate", () => {
+  router(window.location.pathname);
+});

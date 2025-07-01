@@ -1,16 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
-    <script type="module" src="/src/app.js"></script>
+    <title>Create Post</title>
   </head>
-  <body>
-    <h1>Create Post</h1>
+  <body class="bg-gray-100 text-gray-900 font-sans">
+    <main class="max-w-xl mx-auto p-8">
+      <h1 class="text-2xl font-bold mb-4">Create a New Post</h1>
+      <form id="create-post-form" class="space-y-4">
+        <div>
+          <label for="content" class="block mb-1">Post content:</label>
+          <textarea id="content" name="content" required class="w-full border p-2 rounded"></textarea>
+        </div>
+        <div>
+          <label for="upload" class="block mb-1">Optional image:</label>
+          <input type="file" id="upload" name="upload" accept="image/*" class="block w-full" />
+        </div>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Submit</button>
+      </form>
+    </main>
 
-    <form name="createPost">
-      <button>Create Post</button>
-    </form>
+    <script type="module">
+      import { onCreatePost } from "../../src/js/ui/post/create.js";
+      const form = document.getElementById("create-post-form");
+      if (form) {
+        form.addEventListener("submit", onCreatePost);
+      }
+    </script>
   </body>
 </html>
