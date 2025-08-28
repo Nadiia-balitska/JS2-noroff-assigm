@@ -1,16 +1,50 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
+    <title>Create Post - NoroffApp</title>
+    <link rel="stylesheet" href="/src/css/style.css" />
     <script type="module" src="/src/app.js"></script>
   </head>
-  <body>
-    <h1>Create Post</h1>
+  <body class="bg-gray-50 text-gray-800 font-sans">
+    <nav class="flex justify-between items-center bg-white px-6 py-4 shadow-md">
+      <a href="/" class="flex items-center space-x-3">
+        <img src="/public/images/noroff-logo.png" alt="Noroff Logo" class="h-10 w-auto" />
+      </a>
+    </nav>
 
-    <form name="createPost">
-      <button>Create Post</button>
-    </form>
+    <main class="max-w-2xl mx-auto mt-10 px-4">
+      <h1 class="text-2xl font-bold text-center mb-6">Create a New Post</h1>
+
+      <form name="createPost" class="bg-white p-6 rounded-lg shadow space-y-4">
+        <div>
+          <label for="postTitle" class="block font-semibold">Title</label>
+          <input type="text" id="postTitle" name="title" class="w-full px-4 py-2 border rounded" required />
+        </div>
+
+        <div>
+          <label for="postContent" class="block font-semibold">Content</label>
+          <textarea id="postContent" name="body" class="w-full px-4 py-2 border rounded h-28 resize-none" required></textarea>
+        </div>
+
+        <div>
+          <label for="postCategorie" class="block font-semibold">Tags (comma-separated)</label>
+          <input type="text" name="tags" id="postCategorie" class="w-full px-4 py-2 border rounded" />
+        </div>
+
+        <div>
+          <label for="postMedia-url" class="block font-semibold">Media URL</label>
+          <input type="url" name="media-url" id="postMedia-url" class="w-full px-4 py-2 border rounded" />
+        </div>
+
+        <div>
+          <label for="postMedia-alt" class="block font-semibold">Media Alt Text</label>
+          <input type="text" name="media-alt" id="postMedia-alt" class="w-full px-4 py-2 border rounded" />
+        </div>
+
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Create Post</button>
+      </form>
+    </main>
   </body>
 </html>

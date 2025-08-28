@@ -1,1 +1,65 @@
-@import url(_reset.css);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-100 text-gray-800 font-sans p-6;
+  }
+
+  h1, h2, h3 {
+    @apply font-semibold text-center text-gray-800;
+  }
+
+  img {
+    @apply max-w-full h-auto mx-auto my-4 rounded;
+  }
+
+  a {
+    @apply text-blue-600 hover:underline;
+  }
+
+  input, textarea, select {
+    @apply w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500;
+  }
+
+  button {
+    @apply px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition;
+  }
+
+  form {
+    @apply flex flex-col gap-4;
+  }
+
+  .container {
+    @apply max-w-3xl mx-auto bg-white p-6 rounded shadow;
+  }
+
+  .post-card {
+    @apply bg-white p-4 rounded shadow mb-6;
+  }
+
+  .comment {
+    @apply border-t border-gray-200 pt-2 mt-2 text-sm;
+  }
+
+  .nav-bar {
+    @apply flex justify-between items-center bg-white shadow p-4 mb-6;
+  }
+
+  .nav-bar a {
+    @apply mx-2 text-gray-700 font-medium hover:text-blue-500;
+  }
+
+  .nav-bar button {
+    @apply bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700;
+  }
+
+  .alert {
+    @apply fixed top-20 left-1/2 transform -translate-x-1/2 bg-green-600 text-white text-lg px-6 py-4 rounded shadow z-50;
+  }
+
+  .alert-error {
+    @apply bg-red-600 text-white text-lg px-6 py-4 rounded shadow;
+  }
+}

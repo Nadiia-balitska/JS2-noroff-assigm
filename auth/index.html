@@ -1,14 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
+    <title>Auth - NoroffApp</title>
+    <link rel="stylesheet" href="/src/css/style.css" />
     <script type="module" src="/src/app.js"></script>
   </head>
-  <body>
-    <h1>Auth</h1>
-    <a href="./login/">Login</a> or <a href="./register/">Register</a>
+  <body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- ✅ Navbar placeholder -->
+    <div id="navbar"></div>
+
+    <main class="flex justify-center items-center min-h-screen px-4">
+      <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md text-center">
+        <h1 class="text-2xl font-bold mb-6">Welcome to NoroffApp</h1>
+        <p class="mb-4 text-gray-600">Choose an option to get started:</p>
+        <div class="space-x-4">
+          <a href="/auth/login/" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Login</a>
+          <a href="/auth/register/" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition">Register</a>
+        </div>
+      </div>
+    </main>
+    
+    <script type="module">
+      import { renderNavbar } from "/src/js/ui/global/navbar.js";
+      renderNavbar();
+    </script>
+    
   </body>
 </html>

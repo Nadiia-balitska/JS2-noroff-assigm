@@ -1,55 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
-    <script type="module" src="/src/app.js"></script>
+    <title>Register - NoroffApp</title>
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <script type="module" src="/src/js/api/auth/register.js"></script>
   </head>
+  <body class="bg-gray-50 text-gray-800 font-sans">
 
-  <body>
-    <h1>Register</h1>
+    <!-- Navigation -->
+    <nav class="flex justify-between items-center bg-white px-6 py-4 shadow-md">
+      <a href="/" class="flex items-center space-x-3">
+        <img src="/public/images/noroff-logo.png" alt="Noroff Logo" class="h-10 w-auto" />
+      </a>
+    </nav>
 
-    <form name="register">
-      <div>
-        <label for="name">Name</label>
-        <input
-          id="name"
-          type="text"
-          name="name"
-          required
-          maxlength="20"
-          pattern="^[\w]+$"
-          title="Please enter a username using only letters and numbers"
-        />
+    <!-- Register Form -->
+    <main class="flex justify-center items-center min-h-screen px-4">
+      <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <h1 class="text-2xl font-bold text-center mb-6">Register</h1>
+
+        <form name="register" class="space-y-4">
+          <div>
+            <label for="name" class="block font-medium">Name</label>
+            <input
+              id="name"
+              type="text"
+              name="name"
+              required
+              maxlength="20"
+              pattern="^[\\w]+$"
+              class="w-full px-4 py-2 border rounded"
+              title="Username must be letters/numbers only"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="block font-medium">Email</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              required
+              pattern="^[\\w\\-.]+@(stud\\.)?noroff\\.no$"
+              class="w-full px-4 py-2 border rounded"
+              title="Must be a valid noroff.no or stud.noroff.no email"
+            />
+          </div>
+
+          <div>
+            <label for="password" class="block font-medium">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              required
+              minlength="8"
+              class="w-full px-4 py-2 border rounded"
+            />
+          </div>
+
+          <div id="errorMessages" class="text-red-600 text-sm"></div>
+          <div id="successMessages" class="text-green-600 text-sm"></div>
+
+          <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Register</button>
+        </form>
+
+        <p class="text-center text-sm mt-4">Already have an account? <a href="/auth/login/" class="text-blue-600 hover:underline">Login here</a></p>
       </div>
-
-      <div>
-        <label for="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          name="email"
-          required
-          pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
-          title="Please enter a valid noroff.no or stud.noroff.no address"
-        />
-      </div>
-
-      <div>
-        <label for="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          required
-          minlength="8"
-        />
-      </div>
-
-      <a href="/auth/login/">Login</a>
-      <button>Register</button>
-    </form>
+    </main>
   </body>
 </html>

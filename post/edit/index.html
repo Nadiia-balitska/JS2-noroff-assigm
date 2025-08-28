@@ -1,18 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
-    <script type="module" src="/src/app.js"></script>
+    <title>Edit Post - NoroffApp</title>
+    <link rel="stylesheet" href="/src/css/style.css" />
   </head>
+  <body class="bg-gray-50 text-gray-800 font-sans">
+    <nav class="flex justify-between items-center bg-white px-6 py-4 shadow-md">
+      <a href="/" class="flex items-center space-x-3">
+        <img src="/public/images/noroff-logo.png" alt="Noroff Logo" class="h-10 w-auto" />
+      </a>
+      <div class="flex items-center space-x-6">
+        <a href="/profile/" class="text-gray-700 hover:text-blue-600 transition">My Profile</a>
+        <button id="auth-button" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+          Auth
+        </button>
+        
+      </div>
+    </nav>
 
-  <body>
-    <h1>Edit Post</h1>
+    <main class="max-w-2xl mx-auto mt-10 bg-white p-8 rounded shadow">
+      <h1 class="text-2xl font-bold mb-6 text-center">Edit Post</h1>
+      <form id="editPostForm" class="space-y-4">
+        <input type="text" name="title" id="title" placeholder="Title" required class="w-full border px-4 py-2 rounded" />
+        <textarea name="body" id="body" placeholder="Content" required class="w-full border px-4 py-2 rounded h-24"></textarea>
+        <input type="text" name="tags" id="tags" placeholder="Tags" class="w-full border px-4 py-2 rounded" />
+        <input type="url" name="media-url" id="media-url" placeholder="Image URL" class="w-full border px-4 py-2 rounded" />
+        <input type="text" name="media-alt" id="media-alt" placeholder="Alt text" class="w-full border px-4 py-2 rounded" />
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Update Post</button>
+      </form>
+    </main>
 
-    <form name="editPost">
-      <button>Edit Post</button>
-    </form>
+    <script type="module" src="/src/js/router/views/postEdit.js"></script>
   </body>
 </html>

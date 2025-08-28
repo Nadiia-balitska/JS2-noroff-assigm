@@ -1,3 +1,8 @@
-import { authGuard } from "../../utilities/authGuard";
+console.log("Post Edit page placeholder loaded");
 
-authGuard();
+// Optional: export something to satisfy the import
+export default function postEditView() {
+  const container = document.createElement("div");
+  container.textContent = "Post editing coming soon!";
+  document.body.appendChild(container);
+}

@@ -1,22 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - NoroffApp</title>
+    <link rel="stylesheet" href="/src/css/style.css" />
+  </head>
+  <body class="bg-gray-100 text-gray-800 font-sans">
+    <!-- Loader -->
+    <div id="loadingInd" class="fixed inset-0 flex items-center justify-center bg-white bg-opacity-70 z-50 hidden">
+      <div class="loader border-4 border-blue-500 border-t-transparent rounded-full w-12 h-12 animate-spin"></div>
+    </div>
 
-<head>
-  <meta charset="UTF-8" />
+    <!-- Navigation Bar -->
+    <nav class="flex justify-between items-center bg-white px-6 py-4 shadow-md">
+      <a href="/" class="flex items-center space-x-3">
+        <img src="/public/images/noroff-logo.png" alt="Noroff Logo" class="h-10 w-auto" />
+      </a>
+      <div class="flex items-center space-x-6">
+        <a href="/profile/" class="text-gray-700 hover:text-blue-600 transition">My Profile</a>
+        <a href="/post/create/" class="text-gray-700 hover:text-blue-600 transition">Create Post</a>
+        <button id="auth-button" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+          Login
+        </button>
+      </div>
+    </nav>
+    
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Noroff FED2 JS2 CA</title>
-  <script type="module" src="/src/app.js"></script>
-</head>
+    <!-- Main Content -->
+    <main class="max-w-3xl mx-auto py-8 px-4">
+      <h1 class="text-3xl font-bold text-center mb-6">Welcome to Noroff Social</h1>
 
-<body>
-  <img src="/images/noroff-logo.png" alt="Noroff Logo" />
+      <!-- Search -->
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold mb-4">All Posts</h2>
+        <div class="flex space-x-2 mb-4">
+          <input type="text" id="search-input" class="flex-grow px-4 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300" placeholder="Search posts..." />
+          <button id="search-button" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Search</button>
+        </div>
+        <h2 id="search-results-headline" class="text-xl font-semibold mb-2 hidden">Search Results</h2>
+      </section>
 
-  <h1>Home</h1>
+      <!-- Posts Feed -->
+      <div id="homePostsContainer" class="space-y-4"></div>
+    </main>
 
-  <a href="/profile/">My Profile</a>
-  <a href="/auth/login/">Login</a>
-  <a href="/auth/register/">Register</a>
-  <button>Logout</button>
-</body>
+    <script type="module" src="/src/app.js"></script>
+    <script type="module" src="/src/js/router/views/home.js"></script>
+    
+  </body>
 </html>
