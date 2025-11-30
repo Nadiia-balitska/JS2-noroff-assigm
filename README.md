@@ -9,8 +9,8 @@ Users can register, log in, view a feed of posts, create their own posts, edit a
 
 ## 🔗 Live demo
 
-- Deployed on: **Vercel and  GitHub Pages**  
-- URL: `https://your-project-url-here.vercel.app/`  
+- Deployed on: **Vercel**  
+- URL: `[https://your-project-url-here.vercel.app/](https://js-2-noroff-assigm-z2yo.vercel.app/auth/login/)`  
 
 
 
