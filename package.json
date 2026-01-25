@@ -9,6 +9,39 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.19",
     "vite": "^5.4.1"
+  },
+  "description": "This project is a front-end client for the Noroff Social Media API, built as part of the JavaScript 2 course.   Users can register, log in, view a feed of posts, create their own posts, edit and delete them, view profiles and follow/unfollow other users.",
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nadiia-balitska/JS2-noroff-assigm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nadiia-balitska/JS2-noroff-assigm/issues"
+  },
+  "homepage": "https://github.com/Nadiia-balitska/JS2-noroff-assigm#readme",
+  "dependencies": {
+    "baseline-browser-mapping": "^2.9.18",
+    "browserslist": "^4.28.1",
+    "caniuse-lite": "^1.0.30001766",
+    "electron-to-chromium": "^1.5.278",
+    "esbuild": "^0.27.2",
+    "escalade": "^3.2.0",
+    "fraction.js": "^5.3.4",
+    "fsevents": "^2.3.3",
+    "nanoid": "^3.3.11",
+    "node-releases": "^2.0.27",
+    "picocolors": "^1.1.1",
+    "postcss-value-parser": "^4.2.0",
+    "rollup": "^4.21.1",
+    "source-map-js": "^1.2.1",
+    "update-browserslist-db": "^1.2.3"
   }
 }
