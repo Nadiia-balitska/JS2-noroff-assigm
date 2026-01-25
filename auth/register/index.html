@@ -5,55 +5,83 @@
     <title>Register | Social App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/src/css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
   </head>
   <body>
-    <main class="auth-container">
-      <section class="auth-card">
-        <h1>Create account</h1>
-        <p class="auth-subtitle">Use your @stud.noroff.no email.</p>
+    <main class="min-h-screen bg-slate-950/0 flex items-center justify-center px-6 py-10">
+      <section
+        class="auth-card-tw w-full max-w-[440px] rounded-[var(--radius-lg)] px-[2.6rem] pt-[2.4rem] pb-[2.2rem] relative overflow-hidden border border-[rgba(148,163,184,0.25)] shadow-[var(--shadow-soft)]"
+      >
+        <h1 class="m-0 mb-1 text-[1.7rem] tracking-[0.02em]">Create account</h1>
+        <p class="m-0 mb-7 text-[0.92rem] text-[var(--text-muted)]">
+          Use your @stud.noroff.no email.
+        </p>
 
-        <form id="registerForm" class="auth-form">
-          <label>
-            Username 
-            <input id="name" name="name" type="text" required minlength="3" />
+        <form id="registerForm" class="flex flex-col gap-[0.95rem]">
+          <label class="flex flex-col gap-[0.35rem] text-[0.86rem] text-[var(--text-muted)]">
+            Username
+            <input
+              id="name"
+              name="name"
+              type="text"
+              required
+              minlength="3"
+              class="auth-input-tw rounded-[0.7rem] border border-[var(--border-subtle)] bg-[rgba(15,23,42,0.9)] px-[0.85rem] py-[0.65rem] text-[0.95rem] text-[var(--text-main)] outline-none transition"
+            />
           </label>
 
-          <label>
-            Email 
+          <label class="flex flex-col gap-[0.35rem] text-[0.86rem] text-[var(--text-muted)]">
+            Email
             <input
               id="email"
               name="email"
               type="email"
               required
               placeholder="your.name@stud.noroff.no"
+              class="auth-input-tw rounded-[0.7rem] border border-[var(--border-subtle)] bg-[rgba(15,23,42,0.9)] px-[0.85rem] py-[0.65rem] text-[0.95rem] text-[var(--text-main)] outline-none transition"
             />
           </label>
 
-          <label>
-            Password 
+          <label class="flex flex-col gap-[0.35rem] text-[0.86rem] text-[var(--text-muted)]">
+            Password
             <input
               id="password"
               name="password"
               type="password"
               required
               minlength="8"
+              class="auth-input-tw rounded-[0.7rem] border border-[var(--border-subtle)] bg-[rgba(15,23,42,0.9)] px-[0.85rem] py-[0.65rem] text-[0.95rem] text-[var(--text-main)] outline-none transition"
             />
           </label>
 
-          <label>
+          <label class="flex flex-col gap-[0.35rem] text-[0.86rem] text-[var(--text-muted)]">
             Avatar URL (optional)
-            <input id="avatarUrl" name="avatarUrl" type="url" />
+            <input
+              id="avatarUrl"
+              name="avatarUrl"
+              type="url"
+              placeholder="https://..."
+              class="auth-input-tw rounded-[0.7rem] border border-[var(--border-subtle)] bg-[rgba(15,23,42,0.9)] px-[0.85rem] py-[0.65rem] text-[0.95rem] text-[var(--text-main)] outline-none transition"
+            />
           </label>
 
-          <p id="registerError" class="auth-error" hidden></p>
-          <p id="registerSuccess" class="auth-success" hidden></p>
+          <p id="registerError" class="text-[0.82rem] text-[var(--text-danger)] min-h-[1.1rem] mt-[0.1rem]" hidden></p>
+          <p id="registerSuccess" class="text-[0.82rem] text-[var(--text-success)] min-h-[1.1rem] mt-[0.1rem]" hidden></p>
 
-          <button type="submit" class="btn primary">Create account</button>
+          <button
+            type="submit"
+            class="mt-[0.4rem] inline-flex items-center justify-center gap-[0.35rem] rounded-[var(--radius-full)] border-0 px-[1.1rem] py-[0.7rem] text-[0.95rem] font-semibold cursor-pointer transition auth-btn-primary-tw"
+          >
+            Create account
+          </button>
         </form>
 
-        <p class="auth-switch">
+        <p class="mt-[1.4rem] text-[0.9rem] text-[var(--text-muted)] text-center">
           Already have an account?
-          <a href="/auth/login/">Log in</a>
+          <a class="text-[var(--accent)] font-medium no-underline relative auth-link-underline" href="/auth/login/">
+            Log in
+          </a>
         </p>
       </section>
     </main>
