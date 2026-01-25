@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 @import url(_reset.css);
 @import url(auth.css);
 @import url(base.css);

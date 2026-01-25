@@ -5,23 +5,31 @@
     <title>Profile | Social App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/src/css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
   </head>
   <body>
-    <div class="app-shell">
-      <header class="app-header">
-        <div class="app-header-left">
-          <span class="app-logo-dot"></span>
-          <span class="app-logo-text">Social</span>
-        </div>
-        <div class="app-header-right">
-          <button id="backToFeedBtn" class="btn ghost">← Feed</button>
+    <div class="min-h-screen">
+      <header class="sticky top-0 z-10 border-b border-[rgba(148,163,184,0.12)] bg-[rgba(2,6,23,0.85)] backdrop-blur">
+        <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+          <div class="flex items-center gap-2">
+            <span class="h-2 w-2 rounded-full bg-sky-400 shadow-[0_0_0_6px_rgba(56,189,248,0.12)]"></span>
+            <span class="text-lg font-semibold tracking-wide text-[var(--text-main)]">Social</span>
+          </div>
+
+          <button
+            id="backToFeedBtn"
+            class="inline-flex items-center justify-center rounded-[var(--radius-full)] border border-[rgba(148,163,184,0.25)] px-4 py-2 text-sm font-medium text-[var(--text-main)] hover:bg-[rgba(148,163,184,0.08)] transition"
+          >
+            ← Feed
+          </button>
         </div>
       </header>
 
-      <main class="feed-main">
-        <section id="profileHeader" class="profile-header"></section>
-        <section id="profileStatus" class="feed-status"></section>
-        <section id="profilePosts" class="posts-grid"></section>
+      <main class="mx-auto max-w-5xl px-6 py-8">
+        <section id="profileHeader"></section>
+        <section id="profileStatus" class="mt-4"></section>
+        <section id="profilePosts" class="mt-6"></section>
       </main>
     </div>
 
